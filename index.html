@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="form-control" id="textview" placeholder="0">
+        </form>
+        <tr>
+            <td><input class="button" type="button" value="CE" onclick="c()" ></td>
+            <td><input class="button"  type="button" value="D"  onclick="backSpace()" ></td>
+            <td><input class="button"  type="button" value="/" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="*" onclick="input(this.value)"></td>
+        </tr> 
+        <tr>
+            <td><input class="button" type="button" value="7" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="6" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="5" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="+" onclick="input(this.value)"></td>
+        </tr> 
+        <tr>
+            <td><input class="button" type="button" value="4" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="3" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="2" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="-" onclick="input(this.value)"></td>
+        </tr> 
+        <tr>
+            <td><input class="button" type="button" value="1" onclick="input(this.value)"></td>
+            <td><input class="button"  type="button" value="0" onclick="input(this.value)"></td>
+            <td><input id="equal" class="button"  type="button" value="="  onclick="equal()"></td>
+        </tr> 
+        <div >
+            
+        </div>
+    </div>
+    <script>
+        function input(num){
+            document.getElementById("textview").value =document.getElementById("textview").value + num;
+        }
+        function equal() {
+            var a = document.getElementById("textview").value;
+            console.log(a);
+            if(a){
+                document.getElementById("textview").value = eval(a);
+            }
+        }
+        function c(){
+            document.getElementById("textview").value = ""
+        }
+        function backSpace(){
+            document.getElementById("textview").value =  + ""
+        }
+    </script>
+</body>
+</html>
